@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "security.jwt.secret",
+      "type": "java.lang.String",
+      "description": "Secret for signing JWT tokens; do not commit production token."
+    },
+    {
+      "name": "security.jwt.expirationInMs",
+      "type": "java.lang.Integer",
+      "description": "How much milliseconds before JWT tokens expire."
+    },
+    {
+      "name": "chips.start-amount",
+      "type": "java.lang.Integer",
+      "description": "The amount of chips to get started with."
+    }
+  ]
+}

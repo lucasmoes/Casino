@@ -1,0 +1,24 @@
+# Running "docker-compose up" (active process)
+# or "docker-compose start" (background process)
+# will setup our development database
+#
+# One can connect to it using your DB client
+# (IntelliJ, DataGrip, pqadmin, psql, ...),
+# using the following parameters (see: application.properties):
+#   url = jdbc:postgresql://localhost:15432/casino
+#   username = casino
+#   password = casino
+version: "3.7"
+services:
+  db:
+    build: development/db
+    ports:
+      - "15432:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - DB_APP_NAME=casino
+      - DB_APP_USER=casino
+      - DB_APP_PASS=casino
+    volumes:
+      - "./data:/var/data/db"
